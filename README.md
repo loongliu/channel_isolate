@@ -1,14 +1,27 @@
 # channel_isolate
 
-A new Flutter package project.
+ChannelIsolate is a flutter project that enables method channel call in background isolate for flutter.
+Purely implemented by Dart.
 
 ## Getting Started
 
-This project is a starting point for a Dart
-[package](https://flutter.dev/developing-packages/),
-a library module containing code that can be shared easily across
-multiple Flutter or Dart projects.
 
-For help getting started with Flutter, view our 
-[online documentation](https://flutter.dev/docs), which offers tutorials, 
-samples, guidance on mobile development, and a full API reference.
+#### Add a dependency in your flutter project 
+    channel_isolate:
+            git:
+                url: 'https://github.com/loongliu/channel_isolate'
+
+#### Replace your Isolate and ChannelMethod Implementation.
+
+* Replace `Isolate.spawn(...)` with `ChannelIsolate.spawn(..)`
+* Replace `MethodChannel("channel.name")` with `IsolateMethodChannel("channel.name");`;
+
+#### You are done
+
+Now you can call `invokeMethod()` in isolate created by `ChannelIsolate.spawn(..)`.
+
+## TODO:
+* Support `Isolate.spawnUri(...)`.
+* Support `MethodChannel#invokeListMethod`.
+* Support `MethodChannel#invokeMapMethod`
+* Upload this project to https://pub.dev/.
