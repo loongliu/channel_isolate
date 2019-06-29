@@ -1,7 +1,2 @@
-library channel_isolate;
-
-/// A Calculator.
-class Calculator {
-  /// Returns [value] plus 1.
-  int addOne(int value) => value + 1;
-}
+export 'src/isolate.dart';
+export 'src/isolate_method_channel.dart';
